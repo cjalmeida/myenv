@@ -5,5 +5,5 @@ echo "alias vi=vim" >> ~/.bashrc
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 sed -i -E 's/OSH_THEME=".+?"/OSH_THEME="powerline-multiline"/g' ~/.bashrc
 THEME_FILE=~/.oh-my-bash/themes/powerline-multiline/powerline-multiline.theme.sh
-sed -i -E 's/CWD_THEME_PROMPT_COLOR=.*/CWD_THEME_PROMPT_COLOR=24/g' $THEME_FILE
-sed -i -E 's/CLOCK_THEME_PROMPT_COLOR=.*/CLOCK_THEME_PROMPT_COLOR=24/g' $THEME_FILE
+#sed -i -E 's/CWD_THEME_PROMPT_COLOR=.*/CWD_THEME_PROMPT_COLOR=24/g' $THEME_FILE
+#sed -i -E 's/CLOCK_THEME_PROMPT_COLOR=.*/CLOCK_THEME_PROMPT_COLOR=24/g' $THEME_FILE
