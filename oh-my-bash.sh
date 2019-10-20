@@ -1,9 +1,22 @@
 #!/bin/bash
+
+# install oh-my-bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master/tools/install.sh)"
 echo "alias ls='ls --color'" >> ~/.bashrc
 echo "alias vi=vim" >> ~/.bashrc
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
 sed -i -E 's/OSH_THEME=".+?"/OSH_THEME="powerline-multiline"/g' ~/.bashrc
 THEME_FILE=~/.oh-my-bash/themes/powerline-multiline/powerline-multiline.theme.sh
-#sed -i -E 's/CWD_THEME_PROMPT_COLOR=.*/CWD_THEME_PROMPT_COLOR=24/g' $THEME_FILE
-#sed -i -E 's/CLOCK_THEME_PROMPT_COLOR=.*/CLOCK_THEME_PROMPT_COLOR=24/g' $THEME_FILE
+
+# setup tmux with ssh forwarding
+cat <<EOF > ~/.tmux.conf
+set -g update-environment -r
+set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock
+EOF
+
+cat <<EOF > ~/.ssh/rc 
+if [ -S "\$SSH_AUTH_SOCK" ]; then
+    ln -sf \$SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock 
+fi
+EOF
+chmod 600 ~/.ssh/rc
