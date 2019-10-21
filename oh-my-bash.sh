@@ -12,6 +12,7 @@ THEME_FILE=~/.oh-my-bash/themes/powerline-multiline/powerline-multiline.theme.sh
 cat <<EOF > ~/.tmux.conf
 set -g update-environment -r
 set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock
+set-option -g allow-rename off
 EOF
 
 cat <<EOF > ~/.ssh/rc 
