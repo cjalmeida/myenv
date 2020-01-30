@@ -23,5 +23,13 @@ if [ -S "\$SSH_AUTH_SOCK" ]; then
 fi
 EOF
 chmod 600 ~/.ssh/rc
+# setup python breakpoints
 echo 'export PYTHONBREAKPOINT=ipdb.set_trace' >> $HOME/.bashrc
 
+#!/bin/bash
+git config --global core.editor "vim"
+git config --global user.name 'Cloves Almeida'
+git config --global user.email 'almeida.cloves@bcg.com'
+#!/bin/bash
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install --all
