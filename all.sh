@@ -5,7 +5,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmybash/oh-my-bash/master
 echo "alias ls='ls --color'" >> ~/.bashrc
 echo "alias vi=vim" >> ~/.bashrc
 echo 'export PATH="~/.local/bin:$PATH"' >> ~/.bashrc
-sed -i -E 's/OSH_THEME=".+?"/OSH_THEME="powerline-multiline"/g' ~/.bashrc
+sed -i -E 's/OSH_THEME=".+?"/OSH_THEME="envy"/g' ~/.bashrc
 THEME_FILE=~/.oh-my-bash/themes/powerline-multiline/powerline-multiline.theme.sh
 
 #!/bin/bash
@@ -33,3 +33,6 @@ git config --global user.email 'almeida.cloves@bcg.com'
 #!/bin/bash
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+alias k=kubectl
+complete -F __start_kubectl k
