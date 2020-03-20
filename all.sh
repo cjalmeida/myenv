@@ -34,5 +34,5 @@ git config --global user.email 'almeida.cloves@bcg.com'
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --all
 echo "source <(kubectl completion bash)" >> ~/.bashrc
-alias k=kubectl
-complete -F __start_kubectl k
+echo "alias k=kubectl" >> ~/.bashrc
+echo "complete -F __start_kubectl k" >> ~/.bashrc
