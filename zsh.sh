@@ -8,7 +8,7 @@ sudo chsh -s /usr/bin/zsh $USER
 curl -L git.io/antigen > ~/antigen.zsh
 
 # setup .zshrc
-cat << EOF
+cat > ~/.zshrc << EOF
 # Set up the prompt
 source ~/antigen.zsh
 
