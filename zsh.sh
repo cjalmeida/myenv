@@ -1,7 +1,8 @@
 #!/bin/bash
 
 set -e
-sudo apt install -y zsh
+test -f /usr/bin/apt && sudo apt install -y zsh
+test -f /usr/bin/yum && sudo yum install -y zsh
 sudo chsh -s /usr/bin/zsh $USER
 
 # install antigen
@@ -20,6 +21,7 @@ antigen bundle git
 antigen bundle heroku
 antigen bundle pip
 antigen bundle lein
+antigen bundle kubectl
 antigen bundle command-not-found
 
 # Syntax highlighting bundle.
